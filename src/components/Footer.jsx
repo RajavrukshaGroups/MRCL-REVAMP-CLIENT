@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Facebook,
@@ -17,6 +17,7 @@ import {
 import Logo from "../assets/images/logo.png"
 
 export default function Footer({ onOpenContact }) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [subscribing, setSubscribing] = useState(false);
@@ -140,7 +141,7 @@ export default function Footer({ onOpenContact }) {
               ))}
               <li className="pt-1">
                 <button
-                  onClick={() => onOpenContact ? onOpenContact('Request All Portfolios') : null}
+                  onClick={() =>navigate('/contact')}
                   className="cursor-pointer text-left hover:text-gold-400 font-semibold text-gold-300 transition-colors font-sans block bg-transparent border-0 p-0"
                 >
                   • Book Site Visit
