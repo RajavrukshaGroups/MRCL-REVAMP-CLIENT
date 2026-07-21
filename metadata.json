@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: MRCL Infrastructure",
+  "description": "Premium luxury real estate website presenting 4 BHK villas in South Bangalore with an elegant interactive layout, world-class amenities, and client testimonials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

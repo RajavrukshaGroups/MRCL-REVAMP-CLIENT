@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Gilda Display", "Cinzel", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Premium Luxury Gold Palette */
+  --color-gold-50: #faf7f0;
+  --color-gold-100: #f2e9d3;
+  --color-gold-200: #e4d2a4;
+  --color-gold-300: #d4b673;
+  --color-gold-400: #c59b4c;
+  --color-gold-500: #b5802f;
+  --color-gold-600: #996623;
+  --color-gold-700: #7b4e1b;
+  --color-gold-800: #5c3915;
+  --color-gold-900: #42260f;
+  
+  /* Rich Brand Red / Wine / Crimson */
+  --color-brand-red-50: #fdf2f2;
+  --color-brand-red-100: #fbe3e3;
+  --color-brand-red-500: #881a1e;
+  --color-brand-red-800: #560e12;
+  --color-brand-red-900: #3b0609;
+  --color-brand-red-950: #250204;
+}
+
+@layer utilities {
+  .marble-bg {
+    background-image: linear-gradient(rgba(37, 2, 4, 0.93), rgba(15, 1, 2, 0.97)),
+      radial-gradient(circle at 50% 50%, rgba(181, 128, 47, 0.15) 0%, transparent 60%);
+  }
+  
+  .luxury-gradient {
+    background: linear-gradient(135deg, #250204 0%, #150002 100%);
+  }
+
+  .gold-border {
+    border-color: rgba(181, 128, 47, 0.4);
+  }
+
+  
+  
+  .bg-burgundy-glow {
+  background: radial-gradient(circle at 20% 30%, #440a0f 0%, #1a0305 70%, #0d0102 100%);
+}
+
+
+  .gold-border-focus {
+    border-color: rgba(181, 128, 47, 0.8);
+  }
+  
+  .gold-text-gradient {
+    background: linear-gradient(135deg, #f2e9d3 0%, #b5802f 50%, #7b4e1b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf7f0;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #250204;
+}
+::-webkit-scrollbar-thumb {
+  background: #b5802f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4b673;
+}
