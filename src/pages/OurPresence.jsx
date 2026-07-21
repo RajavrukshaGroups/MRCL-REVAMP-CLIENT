@@ -128,7 +128,7 @@ export default function OurPresence() {
               {/* ================= BENGALURU PIN OVERLAY ================= */}
               {/* Pin location positioned relative to the map (Karnataka region is located in South West India) */}
               <div 
-                className="absolute bottom-[28%] left-[34%] z-20 flex flex-col items-center cursor-pointer group/pin"
+                className="absolute bottom-[16%] left-[38%] z-20 flex flex-col items-center cursor-pointer group/pin"
                 style={{ transform: 'translate(-50%, -50%)' }}
               >
                 {/* Concentric radar pulses */}
@@ -158,7 +158,7 @@ export default function OurPresence() {
               {/* ================= SHIMOGA PIN OVERLAY ================= */}
               {/* Located slightly north-west of Bengaluru */}
               <div 
-                className="absolute bottom-[35%] left-[29%] z-20 flex flex-col items-center cursor-pointer group/pin"
+                className="absolute bottom-[19%] left-[34%] z-20 flex flex-col items-center cursor-pointer group/pin"
                 style={{ transform: 'translate(-50%, -50%)' }}
               >
                 {/* Concentric radar pulses */}
