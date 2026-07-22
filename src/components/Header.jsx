@@ -79,7 +79,7 @@ export default function Header({ onOpenContact }) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#120002] lg:bg-[linear-gradient(115deg,_#120002_0%,_#120002_26%,_#d4b673_26.2%,_#b5802f_26.4%,_#230104_26.5%,_#120002_100%)] border-b border-gold-400/20 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#120002] header-diagonal-bg border-b border-gold-400/20 ${
           isScrolled ? 'py-2.5 shadow-xl bg-opacity-98' : 'py-4 shadow-lg'
         }`}
       >
@@ -306,11 +306,22 @@ export default function Header({ onOpenContact }) {
                       </Link>
                     );
                   })}
+                  
+                  {/* Contact Us Mobile Nav Item */}
+                  <Link
+                    to="/contact"
+                    onClick={handleNavClick}
+                    className={`text-sm font-medium tracking-widest py-2 border-b border-white/5 transition-colors ${
+                      location.pathname === '/contact' ? 'text-gold-400 pl-2 font-bold' : 'text-gold-100/70 hover:text-gold-300'
+                    }`}
+                  >
+                    CONTACT US
+                  </Link>
                 </nav>
               </div>
 
               <div className="pt-6 border-t border-gold-400/10 space-y-4">
-                <button
+                {/* <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     onOpenContact();
@@ -318,7 +329,17 @@ export default function Header({ onOpenContact }) {
                   className="w-full flex items-center justify-center gap-3 px-5 py-3 bg-gold-500 hover:bg-gold-400 text-brand-red-950 rounded-md font-bold text-xs tracking-widest shadow-lg transition-all"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+91 99860 12345</span>
+                  <span>+91 9071415999</span>
+                </button> */}
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.location.href = "tel:+919071415999";
+                  }}
+                  className="w-full flex items-center justify-center gap-3 px-5 py-3 bg-gold-500 hover:bg-gold-400 text-brand-red-950 rounded-md font-bold text-xs tracking-widest shadow-lg transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+91 9071415999</span>
                 </button>
                 <p className="text-center text-[10px] text-gold-200/50 uppercase tracking-widest">
                   Crafting Luxury. Building Lifestyles.

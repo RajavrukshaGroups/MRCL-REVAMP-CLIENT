@@ -57,6 +57,20 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  
+  @media (min-width: 1024px) {
+    .header-diagonal-bg {
+      --split: max(340px, calc(50% - 300px));
+      background: linear-gradient(115deg, 
+        #120002 0%, 
+        #120002 var(--split), 
+        #d4b673 calc(var(--split) + 2px), 
+        #b5802f calc(var(--split) + 4px), 
+        #230104 calc(var(--split) + 6px), 
+        #120002 100%
+      );
+    }
+  }
 }
 
 html {

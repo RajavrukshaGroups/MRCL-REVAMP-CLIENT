@@ -676,7 +676,7 @@ export default function HeroSection({
   return (
     <main 
       id="hero-core-container" 
-      className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-6 relative z-10 flex flex-col justify-center overflow-visible bg-burgundy-glow"
+      className="flex-1 w-full pt-32 pb-6 relative z-10 flex flex-col justify-center overflow-hidden bg-burgundy-glow"
       style={{
         '--accent': currentAccent,
         '--accent-80': `${currentAccent}cc`,
@@ -694,7 +694,8 @@ export default function HeroSection({
         }}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
         
         {/* Left Hero Text Block (Col-span 5) */}
         <div id="hero-text-block" className="lg:col-span-5 space-y-6 sm:space-y-8 relative ml-4">
@@ -888,6 +889,7 @@ export default function HeroSection({
 
         </div>
 
+      </div>
       </div>
 
     </main>
