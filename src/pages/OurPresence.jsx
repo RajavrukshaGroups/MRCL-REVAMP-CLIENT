@@ -4,6 +4,7 @@ import {
   MapPin, Building2, TrendingUp, Compass, Leaf, Users, Trees, Landmark
 } from 'lucide-react';
 import { ASSETS } from '../data';
+import sugarlandAerialImg from "../assets/images/india_map_presence_1784265017083.jpg"
 
 export default function OurPresence() {
   return (
@@ -239,7 +240,7 @@ export default function OurPresence() {
                 {/* Circular image thumbnail with elegant frame */}
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-[3.5px] border-[#c5a85c] shadow-lg flex-shrink-0 bg-stone-900">
                   <img 
-                    src={ASSETS.sugarlandAerial} 
+                    src={sugarlandAerialImg} 
                     alt="Bengaluru skyline representation" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                     referrerPolicy="no-referrer"

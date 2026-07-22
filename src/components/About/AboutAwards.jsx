@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Award, ChevronRight } from 'lucide-react';
 import AwardImg from "../../assets/images/award.png"
+import AwardImg2 from "../../assets/images/mrcl_times_award_2025_1784176578893.jpg"
  
 export default function AboutAwards() {
   const [showAwardModal, setShowAwardModal] = useState(false);
@@ -36,7 +37,8 @@ export default function AboutAwards() {
                 
                 <div className="relative bg-[#1a0507] rounded-lg overflow-hidden p-2">
                   <img 
-                    src="/src/assets/images/mrcl_times_award_2025_1784176578893.jpg" 
+                    src={AwardImg2}
+                    //src="/src/assets/images/mrcl_times_award_2025_1784176578893.jpg" 
                     alt="Times Business Awards 2025 MRCL Infrastructure"
                     className="w-full h-auto object-cover rounded-md transform transition-all duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
@@ -186,7 +188,7 @@ export default function AboutAwards() {
               </div>
               <div className="border border-gold-400/30 rounded-lg overflow-hidden max-h-[70vh] bg-neutral-950 flex items-center justify-center">
                 <img 
-                  src="/src/assets/images/mrcl_times_award_2025_1784176578893.jpg" 
+                  src={AwardImg2} 
                   alt="High Resolution Times Business Awards Certificate"
                   className="w-full h-auto max-h-[65vh] object-contain mx-auto"
                   referrerPolicy="no-referrer"
