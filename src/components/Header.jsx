@@ -79,7 +79,7 @@ export default function Header({ onOpenContact }) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#120002] header-diagonal-bg border-b border-gold-400/20 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-[#120002] border-b border-gold-400/20 ${
           isScrolled ? 'py-2.5 shadow-xl bg-opacity-98' : 'py-4 shadow-lg'
         }`}
       >
@@ -95,7 +95,17 @@ export default function Header({ onOpenContact }) {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative">
+              {/* Dynamic diagonal background pinned to nav to prevent overlapping */}
+              <div 
+                className={`absolute left-[-40px] xl:left-[-50px] w-[150vw] -z-10 skew-x-[-25deg] pointer-events-none transition-all duration-300`}
+                style={{
+                  top: '50%',
+                  height: isScrolled ? '70px' : '82px',
+                  transform: 'translateY(-50%) skewX(-25deg)',
+                  background: 'linear-gradient(to right, #d4b673 0px, #b5802f 3px, #230104 4px, #120002 800px)'
+                }}
+              />
               {navItems.map((item) => {
                 const hasSub = !!item.subItems;
                 const isActive = getIsActive(item.href, item.subItems);
