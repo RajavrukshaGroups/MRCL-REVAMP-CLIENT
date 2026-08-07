@@ -237,7 +237,7 @@ export default function Projects({ onOpenContact }) {
                         <span>FULL DETAILS</span>
                       </button>
                       <button
-                        onClick={() => handleBookVisit(selectedProject.name)}
+                        onClick={() =>navigate('/contact') }
                         className="cursor-pointer flex items-center justify-center gap-1.5 py-3 bg-gold-500 hover:bg-gold-400 text-brand-red-950 font-bold text-[10px] tracking-widest rounded-md transition-all duration-300 shadow-xl"
                       >
                         <Home className="w-3.5 h-3.5" />

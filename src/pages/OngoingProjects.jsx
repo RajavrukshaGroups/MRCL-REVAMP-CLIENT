@@ -258,7 +258,7 @@ export default function OngoingProjects() {
             {/* Realistic Villa Render Showcase Image */}
             <div className="relative aspect-[16/10] w-full bg-stone-900 overflow-hidden">
               <img 
-                src={ASSETS.serenityVilla} 
+                src="https://res.cloudinary.com/rot5ausf/image/upload/v1784368891/12_hkiend.jpg"
                 alt="MRCL Unicon Sugarland Elegant Villa Exterior View" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
@@ -273,7 +273,7 @@ export default function OngoingProjects() {
                 </h3>
                 <p className="font-sans text-stone-300 text-[11px] tracking-wider uppercase mt-1.5 flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-[#c5a85c] shrink-0" />
-                  MYSORE ROAD, BANGALORE
+                  Bannerghatta
                 </p>
               </div>
             </div>

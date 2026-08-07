@@ -623,6 +623,21 @@ import {
 } from 'lucide-react';
 import { ASSETS } from '../../data';
 
+import sugarLandImg1 from "../../assets/sugarland-unicorn/real-images/1.png"
+import sugarLandImg2 from "../../assets/sugarland-unicorn/real-images/2.png"
+import sugarLandImg3 from "../../assets/sugarland-unicorn/real-images/3.png"
+import sugarLandImg4 from "../../assets/sugarland-unicorn/real-images/4.png"
+import sugarLandImg5 from "../../assets/sugarland-unicorn/real-images/5.png"
+import sugarLandImg6 from "../../assets/sugarland-unicorn/real-images/6.png"
+import sugarLandImg7 from "../../assets/sugarland-unicorn/real-images/7.jpeg"
+import sugarLandImg8 from "../../assets/sugarland-unicorn/real-images/8.jpeg"
+import sugarLandImg9 from "../../assets/sugarland-unicorn/real-images/9.jpeg"
+import sugarLandImg10 from "../../assets/sugarland-unicorn/real-images/10.png"
+import sugarLandImg11 from "../../assets/sugarland-unicorn/real-images/11.png"
+import sugarLandImg12 from "../../assets/sugarland-unicorn/real-images/12.png"
+import sugarLandImg13 from "../../assets/sugarland-unicorn/real-images/13.png"
+import sugarLandImg14 from "../../assets/sugarland-unicorn/real-images/14.png"
+
 const LazyImage = ({ src, alt, className }) => {
   return (
     <img
@@ -660,7 +675,7 @@ export default function GalleryPage() {
       title: 'Bespoke Modern Villa',
       category: 'architecture',
       categoryLabel: 'Architecture',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368886/1_nbm2lr.jpg",
+      image: sugarLandImg1,
       description: 'Elegant contemporary villa exterior with warm lighting and tropical landscaping.',
     },
     {
@@ -668,7 +683,7 @@ export default function GalleryPage() {
       title: 'Architectural Side-Elevation',
       category: 'architecture',
       categoryLabel: 'Architecture',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368887/2_y3yrge.jpg",
+      image: sugarLandImg2,
       description: 'Linear facade balancing wooden finishes, concrete panels, and double-glazing.',
     },
     {
@@ -676,7 +691,7 @@ export default function GalleryPage() {
       title: 'Contemporary Luxury Villa',
       category: 'architecture',
       categoryLabel: 'Architecture',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368888/3_tdafgn.jpg",
+      image: sugarLandImg3,
       description: 'Triple-story statement estate showcasing premium natural stone columns.',
     },
     {
@@ -684,7 +699,7 @@ export default function GalleryPage() {
       title: 'Symmetrical Frontage',
       category: 'architecture',
       categoryLabel: 'Architecture',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368887/4_mayitm.jpg",
+      image: sugarLandImg4,
       description: 'Bespoke cubic geometry framing private yards and ambient lighting lines.',
     },
     {
@@ -756,7 +771,7 @@ export default function GalleryPage() {
       title: 'Clubhouse Swimming Pool',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368892/13_x3myig.jpg",
+      image: sugarLandImg5,
       description: 'Shimmering blue waters in the central recreation pavilion for premium residents.',
     },
     {
@@ -764,7 +779,7 @@ export default function GalleryPage() {
       title: 'Gated Villa Masterplan',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368893/14_tezhbf.jpg",
+      image: sugarLandImg6,
       description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
     },
     {
@@ -772,7 +787,7 @@ export default function GalleryPage() {
       title: 'Gated Villa Masterplan',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368894/15_oey7gz.jpg",
+      image: sugarLandImg7,
       description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
     },
     {
@@ -780,7 +795,7 @@ export default function GalleryPage() {
       title: 'Gated Villa Masterplan',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368894/16_vm5ocn.jpg",
+      image: sugarLandImg8,
       description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
     },
     {
@@ -788,7 +803,7 @@ export default function GalleryPage() {
       title: 'Gated Villa Masterplan',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368895/17_cmbqt6.jpg",
+      image: sugarLandImg9,
       description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
     },
     {
@@ -796,7 +811,39 @@ export default function GalleryPage() {
       title: 'Gated Villa Masterplan',
       category: 'lifestyle',
       categoryLabel: 'Lifestyle',
-      image: "https://res.cloudinary.com/rot5ausf/image/upload/v1784368896/18_mtuf0e.jpg",
+      image: sugarLandImg10,
+      description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
+    },
+    {
+      id: 'sug-19',
+      title: 'Gated Villa Masterplan',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
+      image: sugarLandImg11,
+      description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
+    },
+    {
+      id: 'sug-20',
+      title: 'Gated Villa Masterplan',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
+      image: sugarLandImg12,
+      description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
+    },
+    {
+      id: 'sug-21',
+      title: 'Gated Villa Masterplan',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
+      image: sugarLandImg13,
+      description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
+    },
+    {
+      id: 'sug-22',
+      title: 'Gated Villa Masterplan',
+      category: 'lifestyle',
+      categoryLabel: 'Lifestyle',
+      image: sugarLandImg14,
       description: 'Aerial layout rendering demonstrating beautifully planned villa neighborhoods.',
     }
   ];

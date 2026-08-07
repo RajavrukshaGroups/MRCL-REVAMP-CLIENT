@@ -173,6 +173,7 @@ import { ASSETS } from '../../data';
 import aboutBanner from "../../assets/images/about-us-background-image.png"
 import { useNavigate } from 'react-router-dom';
 import SugarlandImg from "../../assets/sugarland-unicorn/3.jpg"
+import VillaImg from "../../assets/images/home-villa-img.png"
 
 
 function StatCounter({ end, suffix, label, delay = 0 }) {
@@ -375,7 +376,7 @@ export default function About({ onOpenContact = () => {} }) {
               <div className="relative rounded-xl overflow-hidden aspect-[4/3] border-[12px] border-white shadow-xl">
                 <img
                   //src={ASSETS.lobbyInterior}
-                  src={SugarlandImg}
+                  src={VillaImg}
                   alt="MRCL Luxury Interior Lobby"
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                   referrerPolicy="no-referrer"

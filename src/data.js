@@ -31,6 +31,8 @@ import SylvanWoodsImg7 from "./assets/sylvan-woods/7.jpg"
 import SylvanWoodsImg8 from "./assets/sylvan-woods/8.jpg"
 import SylvanWoodsImg9 from "./assets/sylvan-woods/9.jpg"
 
+
+
 export const ASSETS = {
   SylvanWoodsImg1,
   SylvanWoodsImg2,
@@ -110,15 +112,15 @@ export const PROJECTS = [
   {
     id: 'unicon-sugarland',
     name: 'MRCL UNICON SUGARLAND',
-    location: 'Mysore Road, Bangalore',
+    location: 'Bannerghatta, Bangalore',
     type: 'Premium Luxury Villas',
-    image: 'https://res.cloudinary.com/rot5ausf/image/upload/v1784368886/1_nbm2lr.jpg',
+    image: 'https://res.cloudinary.com/rot5ausf/image/upload/v1784368891/12_hkiend.jpg',
     isNew: true,
     bhk: '4 BHK',
     sqft: '4,200 Sq.Ft.',
-    price: '₹3.5 Cr onwards',
+    price: '₹1.99 Cr onwards',
     highlights: ['Private Garden', 'Clubhouse & Swimming Pool', 'Smart Home Controls', 'Top-tier Modular Kitchen'],
-    description: 'A luxurious private sanctuary off Mysore Road. Designed for discerning families seeking expansive modern villa homes, personal garden yards, and premier community features.',
+    description: 'A luxurious private sanctuary off Jigani Road, Bannerghatta. Designed for discerning families seeking expansive modern villa homes, personal garden yards, and premier community features.',
     route: '/ongoing-projects/unicon-sugarland'
   },
   {
@@ -126,7 +128,7 @@ export const PROJECTS = [
     name: 'MRCL AYANUR ENCLAVE',
     location: 'SHIVAMOGGA',
     type: 'Completed Plotted Estate',
-    image: 'https://res.cloudinary.com/rot5ausf/image/upload/v1784368891/12_hkiend.jpg',
+    image: ayanurEnclave,
     isNew: false,
     bhk: 'Completed Plotted',
     sqft: '1,200 - 4,000 Sq.Ft.',
@@ -192,21 +194,73 @@ export const AMENITIES = [
 
 export const TESTIMONIALS = [
   {
-    id: 'test-1',
-    quote: 'MRCL Infrastructure helped us find our dream home. The quality of construction, attention to detail and elegance are truly unmatched. The team walked us through every custom adjustment with incredible patience.',
-    author: 'RAMESH & PRIYA',
-    role: 'MRCL Serenity Resident',
+    id: "test-1",
+    quote:
+      "MRCL Infrastructure helped us find our dream home. The quality of construction, attention to detail, and elegance are truly unmatched. The team walked us through every custom adjustment with incredible patience.",
+    author: "RAMESH & PRIYA",
+    role: "MRCL Serenity Resident",
   },
   {
-    id: 'test-2',
-    quote: 'Living at MRCL Prestige is a lifestyle transition. The double-height living room and personalized home theater are absolute showstoppers. Security is impeccable and the community is highly refined.',
-    author: 'ANIL & SONYA SHARMA',
-    role: 'MRCL Prestige Resident',
+    id: "test-2",
+    quote:
+      "Living at MRCL Prestige has been a lifestyle transformation. The premium design, spacious interiors, and world-class amenities exceeded all our expectations. We couldn't have chosen a better home.",
+    author: "ANIL & SONYA SHARMA",
+    role: "MRCL Prestige Resident",
   },
   {
-    id: 'test-3',
-    quote: 'The sustainable focus on solar and water recycling in MRCL Elite really spoke to us. Our villa is not just ultra-luxurious, but eco-friendly. Truly premium service and timeless build quality.',
-    author: 'DR. SANJAY PRASAD',
-    role: 'MRCL Elite Resident',
+    id: "test-3",
+    quote:
+      "The sustainable focus on solar energy and water recycling in MRCL Elite impressed us immediately. Our villa is luxurious, environmentally responsible, and built to the highest standards.",
+    author: "DR. SANJAY PRASAD",
+    role: "MRCL Elite Resident",
+  },
+  {
+    id: "test-4",
+    quote:
+      "From booking to possession, the entire experience was smooth and transparent. Every commitment was delivered on time, and the final result exceeded our expectations.",
+    author: "RAHUL VERMA",
+    role: "MRCL Heights Resident",
+  },
+  {
+    id: "test-5",
+    quote:
+      "The craftsmanship and premium finishes in our villa are exceptional. Every guest who visits appreciates the thoughtful architecture and elegant interiors.",
+    author: "NEHA AGARWAL",
+    role: "MRCL Signature Resident",
+  },
+  {
+    id: "test-6",
+    quote:
+      "Safety, greenery, and excellent community planning make MRCL the perfect place to raise our children. We truly enjoy the peaceful and luxurious lifestyle here.",
+    author: "KARTHIK & SWATHI",
+    role: "MRCL Green Valley Resident",
+  },
+  {
+    id: "test-7",
+    quote:
+      "The customer support team was always available whenever we needed assistance. Their professionalism and commitment made the entire buying process stress-free.",
+    author: "VIKRAM DESAI",
+    role: "MRCL Royal Villas Resident",
+  },
+  {
+    id: "test-8",
+    quote:
+      "Our investment with MRCL has appreciated significantly over the years. Beyond financial value, we enjoy living in a premium community with outstanding amenities.",
+    author: "MEERA KRISHNAN",
+    role: "MRCL Grand Residency",
+  },
+  {
+    id: "test-9",
+    quote:
+      "Every detail, from landscaping to clubhouse facilities, reflects luxury. The maintenance team keeps the community immaculate, making everyday living a pleasure.",
+    author: "ARJUN REDDY",
+    role: "MRCL Harmony Resident",
+  },
+  {
+    id: "test-10",
+    quote:
+      "Choosing MRCL Infrastructure was one of the best decisions for our family. Superior construction quality, transparent communication, and exceptional service make them stand out.",
+    author: "SURESH & LAKSHMI",
+    role: "MRCL Luxury Homes Resident",
   },
 ];

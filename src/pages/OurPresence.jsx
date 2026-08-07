@@ -91,13 +91,14 @@ export default function OurPresence() {
         <section className="bg-white/40 p-6 sm:p-8 rounded-2xl border border-[#c5a85c]/10 shadow-sm max-w-5xl mx-auto">
           <div className="border-l-4 border-[#8c1c24] pl-6 sm:pl-8 space-y-4">
             <p className="text-stone-700 font-sans text-[14px] sm:text-[15px] leading-relaxed tracking-wide">
-              MRCL Infrastructure Pvt Ltd has established a strong presence in both <strong className="text-[#8c1c24] font-bold">Bengaluru</strong> and <strong className="text-[#8c1c24] font-bold">Shimoga</strong>, 
+              MRCL Infrastructure Pvt Ltd has established a strong presence in <strong className="text-[#8c1c24] font-bold">Bengaluru</strong>,
+              {/* <strong className="text-[#8c1c24] font-bold">Shimoga</strong>,  */}
               offering premium real estate solutions that cater to diverse market needs. In Bengaluru, the company 
               specializes in high-end residential developments, commercial spaces, and investment-driven properties, 
               strategically located in prime areas to ensure excellent connectivity and value appreciation.
             </p>
             <p className="text-stone-700 font-sans text-[14px] sm:text-[15px] leading-relaxed tracking-wide">
-              In Shimoga, MRCL Infrastructure Pvt Ltd focuses on sustainable and community-centric developments, 
+              In Bengaluru, MRCL Infrastructure Pvt Ltd focuses on sustainable and community-centric developments, 
               blending modern infrastructure with the city's rich cultural and natural heritage.
             </p>
             <p className="text-stone-700 font-sans text-[14px] sm:text-[15px] leading-relaxed tracking-wide">
@@ -158,32 +159,32 @@ export default function OurPresence() {
 
               {/* ================= SHIMOGA PIN OVERLAY ================= */}
               {/* Located slightly north-west of Bengaluru */}
-              <div 
+              {/* <div 
                 className="absolute bottom-[19%] left-[34%] z-20 flex flex-col items-center cursor-pointer group/pin"
                 style={{ transform: 'translate(-50%, -50%)' }}
               >
-                {/* Concentric radar pulses */}
+                
                 <div className="absolute w-16 h-16 rounded-full bg-red-600/10 border border-red-600/30 -translate-y-4 animate-[ping_3s_infinite_linear] pointer-events-none" />
                 <div className="absolute w-24 h-24 rounded-full bg-[#c5a85c]/5 border border-[#c5a85c]/20 -translate-y-4 animate-[ping_4.5s_infinite_linear] delay-1500 pointer-events-none" />
 
-                {/* Animated Teardrop Drop-Pin containing Home SVG */}
+                
                 <div className="relative flex items-center justify-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.35)] transform transition-transform duration-300 group-hover/pin:-translate-y-1.5">
-                  {/* Pin Body */}
+                  
                   <svg className="w-12 h-12 text-[#8c1c24] fill-current" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
-                  {/* Inner Gold Home Icon circle */}
+                  
                   <div className="absolute top-[8.5px] w-5 h-5 rounded-full bg-[#FAF6F0] flex items-center justify-center border border-[#c5a85c]/50">
                     <Landmark className="w-3 h-3 text-[#8c1c24] fill-current stroke-[1.5]" />
                   </div>
                 </div>
 
-                {/* Pin Label with glowing card */}
+                
                 <div className="bg-gradient-to-r from-[#4a0105] to-[#250205] text-white border border-[#c5a85c]/50 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase mt-1.5 shadow-lg group-hover/pin:scale-105 transition-transform duration-300 flex items-center gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#c5a85c] animate-pulse" />
                   <span>SHIMOGA</span>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>
@@ -224,8 +225,9 @@ export default function OurPresence() {
         </section>
 
         {/* ================= 4. DETAILED REGIONAL BENTO CARDS ================= */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-6">
-          
+        {/* <section className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-6 flex flex-row justify-center items-center"> */}
+        <section className="pt-6 flex flex-row justify-center items-center">
+
           {/* ================= BENGALURU HIGH-CONTRAST CARD ================= */}
           <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#380104] via-[#210002] to-[#120001] border-2 border-[#c5a85c]/45 p-8 sm:p-10 shadow-2xl flex flex-col justify-between group min-h-[460px]">
             
@@ -350,17 +352,16 @@ export default function OurPresence() {
           </div>
 
           {/* ================= SHIMOGA HIGH-CONTRAST CARD ================= */}
-          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#380104] via-[#210002] to-[#120001] border-2 border-[#c5a85c]/45 p-8 sm:p-10 shadow-2xl flex flex-col justify-between group min-h-[460px]">
+          {/* <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#380104] via-[#210002] to-[#120001] border-2 border-[#c5a85c]/45 p-8 sm:p-10 shadow-2xl flex flex-col justify-between group min-h-[460px]">
             
-            {/* Background vector glow */}
+           
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#c5a85c]/5 blur-[60px] pointer-events-none" />
 
             <div className="space-y-8">
               
-              {/* Card top row with circular nature thumbnail & Title */}
+             
               <div className="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-[#c5a85c]/25">
                 
-                {/* Circular Jog Falls image thumbnail with elegant frame */}
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-[3.5px] border-[#c5a85c] shadow-lg flex-shrink-0 bg-stone-900">
                   <img 
                     src={ASSETS.shimogaFalls} 
@@ -384,10 +385,8 @@ export default function OurPresence() {
 
               </div>
 
-              {/* Bullet Features Grid */}
               <div className="space-y-5">
                 
-                {/* Feature 1 */}
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-[#c5a85c]/15 border border-[#c5a85c]/40 flex items-center justify-center text-[#e5c78a] flex-shrink-0 mt-0.5 shadow-inner">
                     <Leaf className="w-4 h-4" />
@@ -402,7 +401,7 @@ export default function OurPresence() {
                   </div>
                 </div>
 
-                {/* Feature 2 */}
+                
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-[#c5a85c]/15 border border-[#c5a85c]/40 flex items-center justify-center text-[#e5c78a] flex-shrink-0 mt-0.5 shadow-inner">
                     <Users className="w-4 h-4" />
@@ -417,7 +416,7 @@ export default function OurPresence() {
                   </div>
                 </div>
 
-                {/* Feature 3 */}
+               
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-[#c5a85c]/15 border border-[#c5a85c]/40 flex items-center justify-center text-[#e5c78a] flex-shrink-0 mt-0.5 shadow-inner">
                     <Trees className="w-4 h-4" />
@@ -432,7 +431,7 @@ export default function OurPresence() {
                   </div>
                 </div>
 
-                {/* Feature 4 */}
+               
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-[#c5a85c]/15 border border-[#c5a85c]/40 flex items-center justify-center text-[#e5c78a] flex-shrink-0 mt-0.5 shadow-inner">
                     <Landmark className="w-4 h-4" />
@@ -451,29 +450,24 @@ export default function OurPresence() {
 
             </div>
 
-            {/* Bottom Ornate Sketch Overlay - Temple and Hill nature drawing style */}
             <div className="w-full h-16 opacity-30 mt-6 text-[#c5a85c]">
               <svg className="w-full h-full" viewBox="0 0 400 60" fill="none" stroke="currentColor" strokeWidth="1">
-                {/* Scenic nature mountains and temple towers */}
                 <path d="M 0,55 H 400" />
-                {/* Mountain ranges */}
                 <path d="M 10,55 Q 60,25 110,55" />
                 <path d="M 70,55 Q 120,15 170,55" />
-                {/* Temple spires */}
                 <path d="M 210,55 V 35 H 220 V 55" />
                 <path d="M 225,55 V 25 H 245 V 55 M 235,25 V 55" />
                 <path d="M 250,55 V 10 L 265,22 L 280,10 V 55 M 265,22 V 55" />
                 <path d="M 285,55 V 30 H 300 V 55" />
-                {/* More nature hills */}
                 <path d="M 310,55 Q 350,30 390,55" strokeDasharray="3 3" />
                 <path d="M 340,55 Q 370,35 400,55" />
-                {/* Birds in flight */}
+              
                 <path d="M 110,25 Q 115,20 120,25 Q 125,20 130,25" strokeWidth="0.75" />
                 <path d="M 140,18 Q 143,15 146,18 Q 149,15 152,18" strokeWidth="0.75" />
               </svg>
             </div>
 
-          </div>
+          </div> */}
 
         </section>
 

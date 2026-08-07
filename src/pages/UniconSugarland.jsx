@@ -3,30 +3,51 @@ import { useOutletContext } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   MapPin, Phone, Check, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, 
-  Mail, User, Eye, ArrowRight, Download, FileText, Send, X, ZoomIn,
+  Mail, User, Eye, ArrowRight, Download, FileText, Send, X, ZoomIn,ChefHat,
   Building2, Dumbbell, ShieldCheck, Waves, Users, Sparkles, Heart, Footprints, Trophy, Award, Smile
 } from 'lucide-react';
 import { ASSETS } from '../data';
 import { submitProjectEnquiryForm } from '../api';
-import galleryImg1 from "../assets/images/sugarland-landing-page-imgs/gallery-img1.webp";
-import galleryImg2 from "../assets/images/sugarland-landing-page-imgs/gallery-img2.webp";
-import galleryImg3 from "../assets/images/sugarland-landing-page-imgs/gallery-img3.webp";
-import galleryImg4 from "../assets/images/sugarland-landing-page-imgs/gallery-img4.webp";
-import galleryImg5 from "../assets/images/sugarland-landing-page-imgs/gallery-img5.webp";
-import galleryImg6 from "../assets/images/sugarland-landing-page-imgs/gallery-img6.webp";
-import galleryImg7 from "../assets/images/sugarland-landing-page-imgs/gallery-img7.webp";
-import galleryImg8 from "../assets/images/sugarland-landing-page-imgs/gallery-img8.webp";
-import galleryImg9 from "../assets/images/sugarland-landing-page-imgs/gallery-img9.webp";
-import galleryImg10 from "../assets/images/sugarland-landing-page-imgs/gallery-img10.webp";
-import galleryImg11 from "../assets/images/sugarland-landing-page-imgs/gallery-img11.webp";
-import galleryImg12 from "../assets/images/sugarland-landing-page-imgs/gallery-img12.webp";
-import galleryImg13 from "../assets/images/sugarland-landing-page-imgs/gallery-img13.webp";
-//import galleryImg14 from "../assets/images/sugarland-landing-page-imgs/gallery-img-14.jpg";
-import galleryImg15 from "../assets/images/sugarland-landing-page-imgs/gallery-img15.webp";
-import galleryImg16 from "../assets/images/sugarland-landing-page-imgs/gallery-img16.webp";
-import galleryImg17 from "../assets/images/sugarland-landing-page-imgs/gallery-img17.webp";
-import galleryImg18 from "../assets/images/sugarland-landing-page-imgs/gallery-img18.webp";
-import galleryImg19 from "../assets/images/sugarland-landing-page-imgs/gallery-img19.webp";
+// import galleryImg1 from "../assets/images/sugarland-landing-page-imgs/gallery-img1.webp";
+// import galleryImg2 from "../assets/images/sugarland-landing-page-imgs/gallery-img2.webp";
+// import galleryImg3 from "../assets/images/sugarland-landing-page-imgs/gallery-img3.webp";
+// import galleryImg4 from "../assets/images/sugarland-landing-page-imgs/gallery-img4.webp";
+// import galleryImg5 from "../assets/images/sugarland-landing-page-imgs/gallery-img5.webp";
+// import galleryImg6 from "../assets/images/sugarland-landing-page-imgs/gallery-img6.webp";
+// import galleryImg7 from "../assets/images/sugarland-landing-page-imgs/gallery-img7.webp";
+// import galleryImg8 from "../assets/images/sugarland-landing-page-imgs/gallery-img8.webp";
+// import galleryImg9 from "../assets/images/sugarland-landing-page-imgs/gallery-img9.webp";
+// import galleryImg10 from "../assets/images/sugarland-landing-page-imgs/gallery-img10.webp";
+// import galleryImg11 from "../assets/images/sugarland-landing-page-imgs/gallery-img11.webp";
+// import galleryImg12 from "../assets/images/sugarland-landing-page-imgs/gallery-img12.webp";
+// import galleryImg13 from "../assets/images/sugarland-landing-page-imgs/gallery-img13.webp";
+// //import galleryImg14 from "../assets/images/sugarland-landing-page-imgs/gallery-img-14.jpg";
+// import galleryImg15 from "../assets/images/sugarland-landing-page-imgs/gallery-img15.webp";
+// import galleryImg16 from "../assets/images/sugarland-landing-page-imgs/gallery-img16.webp";
+// import galleryImg17 from "../assets/images/sugarland-landing-page-imgs/gallery-img17.webp";
+// import galleryImg18 from "../assets/images/sugarland-landing-page-imgs/gallery-img18.webp";
+// import galleryImg19 from "../assets/images/sugarland-landing-page-imgs/gallery-img19.webp";
+
+import actualCarouselImages1 from "../assets/sugarland-unicorn/real-images/6.png"
+import actualCarouselImages2 from "../assets/sugarland-unicorn/real-images/5.png"
+import actualCarouselImages3 from "../assets/sugarland-unicorn/real-images/4.png"
+import actualCarouselImages4 from "../assets/sugarland-unicorn/real-images/1.png"
+
+import galleryImg1 from "../assets/sugarland-unicorn/real-images/1.png"
+import galleryImg2 from "../assets/sugarland-unicorn/real-images/2.png"
+import galleryImg3 from "../assets/sugarland-unicorn/real-images/3.png"
+import galleryImg4 from "../assets/sugarland-unicorn/real-images/4.png"
+import galleryImg5 from "../assets/sugarland-unicorn/real-images/5.png"
+import galleryImg6 from "../assets/sugarland-unicorn/real-images/6.png"
+import galleryImg7 from "../assets/sugarland-unicorn/real-images/7.jpeg"
+import galleryImg8 from "../assets/sugarland-unicorn/real-images/8.jpeg"
+import galleryImg9 from "../assets/sugarland-unicorn/real-images/9.jpeg"
+import galleryImg10 from "../assets/sugarland-unicorn/real-images/10.png"
+import galleryImg11 from "../assets/sugarland-unicorn/real-images/11.png"
+import galleryImg12 from "../assets/sugarland-unicorn/real-images/12.png"
+import galleryImg13 from "../assets/sugarland-unicorn/real-images/13.png"
+import galleryImg14 from "../assets/sugarland-unicorn/real-images/14.png"
+
 
 export default function UniconSugarland() {
   const context = useOutletContext();
@@ -51,10 +72,10 @@ export default function UniconSugarland() {
   // Actual Photographs Carousel State
   const actualCarouselImages = [
     { src: galleryImg1, caption: "MRCL Unicon Sugarland Premium Villa Elevation", tag: "ACTUAL PHOTOGRAPH" },
-    { src: galleryImg2, caption: "Spacious High-Ceiling Reception & Entrance Lounge", tag: "ACTUAL INTERIOR" },
-    { src: galleryImg3, caption: "Exquisite Gated Row House Community Street", tag: "ACTUAL STREET VIEW" },
-    { src: galleryImg4, caption: "Deluxe master Bedroom with Glass Openings", tag: "ACTUAL INTERIOR VIEW" },
-    { src: galleryImg5, caption: "Beautiful Private Backyard Terrace & Sitout", tag: "ACTUAL BACKYARD" }
+    { src: actualCarouselImages1, caption: "Spacious High-Ceiling Reception & Entrance Lounge", tag: "ACTUAL INTERIOR" },
+    { src: actualCarouselImages2, caption: "Exquisite Gated Row House Community Street", tag: "ACTUAL STREET VIEW" },
+    { src: actualCarouselImages3, caption: "Deluxe master Bedroom with Glass Openings", tag: "ACTUAL INTERIOR VIEW" },
+    { src: actualCarouselImages4, caption: "Beautiful Private Backyard Terrace & Sitout", tag: "ACTUAL BACKYARD" }
   ];
   const [activeActualCarouselIdx, setActiveActualCarouselIdx] = useState(0);
 
@@ -80,11 +101,11 @@ export default function UniconSugarland() {
     { src: galleryImg11, caption: "Grand Entrance Portal Render" },
     { src: galleryImg12, caption: "Exclusive Modern Elevation" },
     { src: galleryImg13, caption: "Elite Resident Leisure Room" },
-    { src: galleryImg15, caption: "Premium Kids Play Area" },
-    { src: galleryImg16, caption: "Gated Community Landscape Garden" },
-    { src: galleryImg17, caption: "Gated Community Landscape Garden" },
-    { src: galleryImg18, caption: "Gated Community Landscape Garden" },
-    { src: galleryImg19, caption: "Gated Community Landscape Garden" },
+    { src: galleryImg14, caption: "Premium Kids Play Area" },
+    // { src: galleryImg16, caption: "Gated Community Landscape Garden" },
+    // { src: galleryImg17, caption: "Gated Community Landscape Garden" },
+    // { src: galleryImg18, caption: "Gated Community Landscape Garden" },
+    // { src: galleryImg19, caption: "Gated Community Landscape Garden" },
   ];
 
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
@@ -362,7 +383,7 @@ export default function UniconSugarland() {
                   { icon: Dumbbell, name: 'Gym' },
                   { icon: Smile, name: "Children's Play Area" },
                   { icon: Building2, name: 'Clubhouse' },
-                  { icon: Utensils, name: 'Catering', overrideIcon: <span className="text-[#c5a85c] text-3xl font-extralight">🍽️</span> },
+                  { icon: ChefHat, name: 'Catering' },
                   { icon: ShieldCheck, name: 'Gated Community' },
                   { icon: Heart, name: 'Spa' },
                   { icon: ShieldCheck, name: '24/7 Security' },

@@ -626,7 +626,7 @@ const carouselSlides = [
     numberStr: '03',
     subtitle: 'COMPLETED CLASSICS',
     titlePart1: 'TIMELESS ENCLAVES.',
-    titlePart2: 'PRISTINE GREENS.',
+    titlePart2: 'DHARITHRI GREENS.',
     description: 'Experience pure architectural sincerity ready to move-in at Ayanur Enclave and Dharithri Greens—meticulously crafted to stand for generations.',
     //image: '/src/assets/images/ayanur_enclave_1784530552100.jpg',
     image: SugarlandImg2,

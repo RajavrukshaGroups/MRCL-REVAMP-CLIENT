@@ -3,23 +3,26 @@ import { motion } from 'motion/react';
 import { Image as ImageIcon, ArrowRight, Maximize2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ASSETS } from '../../data';
+import ExteriorDesign1 from "../../assets/images/exterior-design.png"
+import LobbyInterior from "../../assets/images/interior-design.jpeg"
+import ExteriorDesign2 from "../../assets/sugarland-unicorn/real-images/1.png"
 
 export default function GalleryPreview() {
   const previewItems = [
     {
       title: 'Bespoke Architectural Exterior',
       category: 'Villa Exterior',
-      image: ASSETS.heroVilla,
+      image: ExteriorDesign1,
     },
     {
       title: 'Double-Height Grand Lobby',
       category: 'Lobby & Interior',
-      image: ASSETS.lobbyInterior,
+      image: LobbyInterior,
     },
     {
       title: 'MRCL Serenity Modern Facade',
       category: 'Villa Exterior',
-      image: ASSETS.serenityVilla,
+      image: ExteriorDesign2,
     },
   ];
 
