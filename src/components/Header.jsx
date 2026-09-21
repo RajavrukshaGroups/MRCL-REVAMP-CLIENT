@@ -42,6 +42,7 @@ export default function Header({ onOpenContact }) {
     },
     { name: 'OUR PRESENCE', href: '/our-presence' },
     { name: 'NEWS EVENTS', href: '/news-events' },
+    { name: 'BLOGS', href: '/blogs' },
   ];
 
   useEffect(() => {
