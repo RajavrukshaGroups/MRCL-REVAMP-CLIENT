@@ -49,8 +49,10 @@ function App() {
           <Route path="video-gallery" element={<VideoGallery />} />
           <Route path="our-presence" element={<OurPresence />} />
           <Route path="news-events" element={<NewsEvents />} />
-          {/* <Route path="blog" element={<Blog />} /> */}
           <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:slug" element={<Blogs />} />
+          <Route path="blog" element={<Blogs />} />
+          <Route path="blog/:slug" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="terms-conditions" element={<TermsConditions />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />

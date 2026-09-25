@@ -49,7 +49,7 @@ export default function BlogPreview() {
           </div>
 
           <Link
-            to="/blog"
+            to="/blogs"
             onClick={() => window.scrollTo(0, 0)}
             className="group flex items-center gap-2 text-xs font-bold tracking-widest text-gold-700 hover:text-gold-900 transition-colors"
           >
@@ -106,7 +106,7 @@ export default function BlogPreview() {
                 </div>
 
                 <Link
-                  to="/blog"
+                  to="/blogs"
                   onClick={() => window.scrollTo(0, 0)}
                   className="inline-flex items-center gap-1 text-xs font-semibold text-brand-red-950 hover:text-gold-600 transition-colors"
                 >

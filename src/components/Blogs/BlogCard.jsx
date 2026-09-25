@@ -1,12 +1,16 @@
 import React from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { slugify } from '../../data.js';
 
 export const BlogCard = ({ post, onReadMore }) => {
+  const postSlug = post.slug || slugify(post.title);
+
   return (
     <article
       id={`blog-card-${post.id}`}
       className="group flex flex-col h-full bg-white/70 rounded-xl overflow-hidden border border-[#eae3d5]/80 hover:border-[#dfb76c]/60 transition-all duration-300 hover:shadow-md cursor-pointer"
-      onClick={() => onReadMore(post)}
+      onClick={() => onReadMore?.(post)}
     >
       {/* Card Image */}
       <div className="relative aspect-[16/10] overflow-hidden bg-neutral-100">
@@ -29,7 +33,16 @@ export const BlogCard = ({ post, onReadMore }) => {
 
           {/* Title */}
           <h2 className="font-garamond text-xl sm:text-[22px] font-bold leading-snug text-[#1f1d1d] group-hover:text-[#8b1522] transition-colors line-clamp-2 mb-2.5">
-            {post.title}
+            <Link
+              to={`/blogs/${postSlug}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                onReadMore?.(post);
+              }}
+              className="hover:underline"
+            >
+              {post.title}
+            </Link>
           </h2>
 
           {/* Excerpt */}
@@ -40,22 +53,18 @@ export const BlogCard = ({ post, onReadMore }) => {
 
         {/* Footer Meta */}
         <div className="pt-4 border-t border-[#f0ece1] flex items-center justify-between text-xs mt-auto">
-          {/* <div className="flex items-center gap-1.5 text-neutral-500">
-            <Calendar className="w-3.5 h-3.5 text-[#8b1522]" />
-            <span>{post.date}</span>
-          </div> */}
-
-          <button
+          <Link
+            to={`/blogs/${postSlug}`}
             onClick={(e) => {
               e.stopPropagation();
-              onReadMore(post);
+              onReadMore?.(post);
             }}
             className="flex items-center gap-1 font-bold tracking-wider uppercase text-[11px] text-[#8b1522] group-hover:text-[#500a12] transition-colors focus:outline-none"
             aria-label={`Read more about ${post.title}`}
           >
             <span>READ MORE</span>
             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-          </button>
+          </Link>
         </div>
       </div>
     </article>

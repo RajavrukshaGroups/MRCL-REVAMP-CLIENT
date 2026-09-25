@@ -29,13 +29,14 @@ import {
   newsletterData,
   categories,
   blogPosts,
-  featuredBlogDetail
+  featuredBlogDetail,
+  slugify
 } from '../../data.js';
 import { BlogCard } from './BlogCard.jsx';
 import { ArticleModal } from './ArticleModal.jsx';
 import { ContactModal } from './ContactModal.jsx';
 import { BlogDetailsPage } from '../BlogsDetails/BlogDetailsPage.jsx';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 // Map icon names from categories data to Lucide components
 const iconMap = {
@@ -48,7 +49,8 @@ const iconMap = {
 };
 
 export default function BlogsPage() {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
+  const { slug } = useParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -57,6 +59,21 @@ export default function BlogsPage() {
   const [emailInput, setEmailInput] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [activeSubtitleIdx, setActiveSubtitleIdx] = useState(0);
+
+  // Determine active blog based on URL slug or local state
+  const activeBlog = slug
+    ? blogPosts.find(
+        (p) =>
+          p.slug === slug ||
+          slugify(p.title) === slug ||
+          p.id?.toString() === slug
+      ) || selectedBlog
+    : selectedBlog;
+
+  // Scroll to top when slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
 
   // Cycle through hero subtitles
   useEffect(() => {
@@ -86,26 +103,41 @@ export default function BlogsPage() {
 
   // Handle click to view full blog details
   const handleOpenBlog = (post) => {
+    const postSlug = post.slug || slugify(post.title);
     setSelectedBlog(post);
+    navigate(`/blogs/${postSlug}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Handle returning to blogs catalog
+  const handleBackToBlogs = () => {
+    setSelectedBlog(null);
+    navigate('/blogs');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle selecting a related blog from within BlogDetailsPage
   const handleSelectRelatedBlog = (relatedItem) => {
     const found = blogPosts.find(
-      (p) => p.id === relatedItem.id || p.title.toLowerCase() === relatedItem.title.toLowerCase()
+      (p) =>
+        p.id === relatedItem.id ||
+        p.title?.toLowerCase() === relatedItem.title?.toLowerCase() ||
+        p.slug === relatedItem.slug
     );
     if (found) {
       setSelectedBlog(found);
+      navigate(`/blogs/${found.slug || slugify(found.title)}`);
     } else {
-      setSelectedBlog({
+      const fallbackPost = {
         ...relatedItem,
         category: 'INSIGHTS',
         categorySlug: 'real-estate',
         excerpt: relatedItem.title,
         introParagraphs: [{ id: 'p1', text: relatedItem.title }],
         numberedPoints: []
-      });
+      };
+      setSelectedBlog(fallbackPost);
+      navigate(`/blogs/${relatedItem.slug || slugify(relatedItem.title)}`);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -123,18 +155,20 @@ export default function BlogsPage() {
 
   // Share handler
   const handleShare = async (post) => {
+    const postSlug = post.slug || slugify(post.title);
+    const shareUrl = `${window.location.origin}/blogs/${postSlug}`;
     if (navigator.share) {
       try {
         await navigator.share({
           title: post.title,
           text: post.excerpt,
-          url: window.location.href,
+          url: shareUrl,
         });
       } catch (err) {
         // Share cancelled or failed silently
       }
     } else {
-      navigator.clipboard?.writeText(window.location.href);
+      navigator.clipboard?.writeText(shareUrl);
       alert('Article link copied to clipboard!');
     }
   };
@@ -198,24 +232,40 @@ export default function BlogsPage() {
 
       {/* 2. MAIN CONTENT WRAPPER */}
       <main id="blogs-catalog" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-        {/* CONDITIONAL: If a specific blog is active, show the detailed reading page */}
-        {selectedBlog ? (
-          <div className="bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-[#eae3d5] shadow-xs">
-            <BlogDetailsPage
-              blog={selectedBlog}
-              onBackToBlogs={() => setSelectedBlog(null)}
-              onShare={handleShare}
-              onSelectCategory={(catSlug) => {
-                setSelectedCategory(catSlug);
-                setSelectedBlog(null);
-              }}
-              onSelectRelatedBlog={handleSelectRelatedBlog}
-              onSubscribe={() => {
-                const newsletterElem = document.getElementById('newsletter-section');
-                newsletterElem?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            />
-          </div>
+        {/* CONDITIONAL: If a specific blog or slug is active, show the detailed reading page or not found */}
+        {slug || activeBlog ? (
+          activeBlog ? (
+            <div className="bg-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-[#eae3d5] shadow-xs">
+              <BlogDetailsPage
+                blog={activeBlog}
+                onBackToBlogs={handleBackToBlogs}
+                onShare={handleShare}
+                onSelectCategory={(catSlug) => {
+                  setSelectedCategory(catSlug);
+                  handleBackToBlogs();
+                }}
+                onSelectRelatedBlog={handleSelectRelatedBlog}
+                onSubscribe={() => {
+                  const newsletterElem = document.getElementById('newsletter-section');
+                  newsletterElem?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              />
+            </div>
+          ) : (
+            <div className="bg-white rounded-2xl p-10 sm:p-16 text-center border border-[#eae3d5] space-y-4">
+              <BookOpen className="w-12 h-12 text-[#dfb76c] mx-auto" />
+              <h2 className="font-garamond text-3xl font-bold text-[#1f1a1c]">Article Not Found</h2>
+              <p className="text-sm text-neutral-600 max-w-md mx-auto">
+                The article you are looking for does not exist or has been moved.
+              </p>
+              <button
+                onClick={handleBackToBlogs}
+                className="px-6 py-2.5 rounded-full bg-[#3c040d] text-[#f7e8c3] text-xs font-semibold uppercase tracking-wider hover:bg-[#250207] transition-colors cursor-pointer inline-block"
+              >
+                Back to All Articles
+              </button>
+            </div>
+          )
         ) : (
           /* OTHERWISE: Show the catalog with search, categories, and card grid */
           <div className="space-y-12">

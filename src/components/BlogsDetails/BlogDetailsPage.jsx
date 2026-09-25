@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Share2, ArrowRight, ChevronRight, Tag } from 'lucide-react';
-import { featuredBlogDetail } from '../../data.js';
+import { Link } from 'react-router-dom';
+import { featuredBlogDetail, slugify } from '../../data.js';
 
 export const BlogDetailsPage = ({
   blog = featuredBlogDetail,
@@ -14,6 +15,16 @@ export const BlogDetailsPage = ({
   const [expandedPoints, setExpandedPoints] = useState({});
   // Track bottom "Read More" button toggle
   const [allExpanded, setAllExpanded] = useState(false);
+
+  // Dynamically update document title
+  useEffect(() => {
+    if (blog?.title) {
+      document.title = `${blog.title} | MRCL Infrastructure`;
+    }
+    return () => {
+      document.title = 'MRCL Infrastructure';
+    };
+  }, [blog?.title]);
 
   const togglePoint = (id) => {
     setExpandedPoints((prev) => ({
@@ -54,11 +65,14 @@ export const BlogDetailsPage = ({
     );
   };
 
+  // Canonical slug for this blog
+  const blogSlug = blog.slug || slugify(blog.title);
+
   // Breadcrumb items from data or fallback
   const breadcrumbItems = blog.breadcrumb || [
-    { label: "Home", href: "#" },
-    { label: "Blogs", href: "#" },
-    { label: blog.title, href: "#", current: true }
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: blog.title, href: `/blogs/${blogSlug}`, current: true }
   ];
 
   return (
@@ -80,10 +94,17 @@ export const BlogDetailsPage = ({
                     <span className="text-neutral-700 font-medium truncate max-w-xs sm:max-w-md md:max-w-lg inline-block">
                       {item.label}
                     </span>
+                  ) : item.href && item.href !== '#' ? (
+                    <Link
+                      to={item.href}
+                      className="hover:text-[#8b1522] transition-colors focus:outline-none"
+                    >
+                      {item.label}
+                    </Link>
                   ) : (
                     <button
                       onClick={onBackToBlogs}
-                      className="hover:text-[#8b1522] transition-colors focus:outline-none"
+                      className="hover:text-[#8b1522] transition-colors focus:outline-none cursor-pointer"
                     >
                       {item.label}
                     </button>
@@ -113,7 +134,12 @@ export const BlogDetailsPage = ({
           </span>
         )}
         <h1 className="font-garamond text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.18] text-[#1c1819] mb-3">
-          {blog.title}
+          <Link
+            to={`/blogs/${blogSlug}`}
+            className="hover:text-[#8b1522] transition-colors inline-block"
+          >
+            {blog.title}
+          </Link>
         </h1>
 
         {/* Meta Bar: Date | Read Time | Share from data */}

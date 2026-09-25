@@ -31,6 +31,8 @@ import SylvanWoodsImg7 from "./assets/sylvan-woods/7.jpg"
 import SylvanWoodsImg8 from "./assets/sylvan-woods/8.jpg"
 import SylvanWoodsImg9 from "./assets/sylvan-woods/9.jpg"
 
+import BlogImg3 from "./assets/blogs/blog-img-3.jpg"
+
 
 
 export const ASSETS = {
@@ -333,9 +335,21 @@ export const categories = [
   { id: "tips-guides", name: "Tips & Guides", count: 3, icon: "Lightbulb" },
 ];
 
+export const slugify = (text) => {
+  if (!text) return '';
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+};
+
 export const blogPosts = [
   {
     id: 1,
+    slug: "why-south-bangalore-is-becoming-the-new-hotspot-for-luxury-villa-living",
     category: "REAL ESTATE",
     categorySlug: "real-estate",
     title:
@@ -353,12 +367,12 @@ export const blogPosts = [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
 
     breadcrumb: [
-      { label: "Home", href: "#" },
-      { label: "Blogs", href: "#" },
+      { label: "Home", href: "/" },
+      { label: "Blogs", href: "/blogs" },
       {
         label:
           "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-        href: "#",
+        href: "/blogs/why-south-bangalore-is-becoming-the-new-hotspot-for-luxury-villa-living",
         current: true,
       },
     ],
@@ -604,6 +618,7 @@ export const blogPosts = [
   },
 {
   id: 2,
+  slug: "why-villas-in-south-bangalore-are-attracting-homebuyers-and-investors",
   category: "REAL ESTATE",
   categorySlug: "real-estate",
   title: "Why Villas in South Bangalore Are Attracting Homebuyers and Investors",
@@ -620,12 +635,12 @@ export const blogPosts = [
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85",
 
   breadcrumb: [
-    { label: "Home", href: "#" },
-    { label: "Blogs", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
     {
       label:
         "Why Villas in South Bangalore Are Attracting Homebuyers and Investors",
-      href: "#",
+      href: "/blogs/why-villas-in-south-bangalore-are-attracting-homebuyers-and-investors",
       current: true,
     },
   ],
@@ -890,600 +905,324 @@ export const blogPosts = [
     "Villa Communities",
     "Property Investment",
   ],
-}
-];
+},
 
-// export const blogPosts = [
-//   {
-//     id: 1,
-//     category: "REAL ESTATE",
-//     categorySlug: "real-estate",
-//     title: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-//     excerpt:
-//       "From better connectivity to greener surroundings, South Bangalore is emerging as the preferred choice for luxury villa living. Discover what's driving this shift and why it matters for today's homebuyers.",
-//     date: "September 21, 2026",
-//     readTime: "7 min read",
-//     author: "MRCL Editorial Team",
-//     image:
-//       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
-//     heroImage:
-//       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
-//     breadcrumb: [
-//       { label: "Home", href: "#" },
-//       { label: "Blogs", href: "#" },
-//       { label: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living", href: "#", current: true }
-//     ],
-//     introParagraphs: [
-//       {
-//         id: "p1",
-//         text: "Bangalore has never stopped evolving. Once known primarily as India's technology capital, it has transformed into a city where lifestyle, connectivity, nature, and premium real estate increasingly go hand in hand. Among the city's many emerging residential destinations, South Bangalore is quickly becoming a preferred choice for luxury villa living."
-//       },
-//       {
-//         id: "p2",
-//         text: "With improved infrastructure and growing employment hubs, greener surroundings, and thoughtfully planned communities, South Bangalore offers a compelling mix of urban convenience and private living. For homebuyers looking beyond conventional apartments, the demand for",
-//         highlight: "villas for sale in South Bangalore",
-//         postHighlight: "is reflecting a broader shift toward spacious, experience-driven homes."
-//       },
-//       {
-//         id: "p3",
-//         text: "But what exactly is making this part of Bangalore so attractive?",
-//         isBold: true
-//       }
-//     ],
-//     numberedPoints: [
-//       {
-//         id: 1,
-//         number: 1,
-//         title: "Luxury Is Becoming More About Lifestyle",
-//         description:
-//           "Luxury homebuyers today are looking for more than an impressive address. They want privacy, open spaces, landscaped surroundings, recreational facilities, and a home that supports both work and relaxation. This is where villas have an advantage.",
-//         image:
-//           "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
-//         moreContent:
-//           "Beyond square footage, homeowners crave curated experiences: private infinity plunge pools, double-height sunlit salons, sound-insulated screening rooms, and open alfresco dining terraces that seamlessly bridge indoor luxury with the tranquil outdoor garden."
-//       },
-//       {
-//         id: 2,
-//         number: 2,
-//         title: "Bannerghatta Road Is Drawing Serious Attention",
-//         description:
-//           "One of the prominent residential corridors in South Bangalore is Bannerghatta Road. Known for its strategic location and established social infrastructure, the area has steadily attracted residential and commercial development.",
-//         image:
-//           "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
-//         moreContent:
-//           "With key landmarks such as Fortis and Apollo hospitals, prestigious schools, and swift connectivity via the NICE Road and the upcoming Namma Metro Red line extension, Bannerghatta Road stands as a hallmark of prime residential stability and growth."
-//       },
-//       {
-//         id: 3,
-//         number: 3,
-//         title: "Better Connectivity Is Changing Buyer Preferences",
-//         description:
-//           "Connectivity has always played an important role in Bangalore real estate, but today's buyers are looking at connectivity from a broader perspective. They want convenient access to workplaces, schools, hospitals, shopping destinations, airports, and major roads.",
-//         image:
-//           "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80",
-//         moreContent:
-//           "With the Peripheral Ring Road (PRR), enhanced express flyovers, and arterial feeder networks, commutes to Electronic City, Kanakapura Road, JP Nagar, and the International Airport have transformed into fluid, stress-free journeys."
-//       },
-//       {
-//         id: 4,
-//         number: 4,
-//         title: "More Space, More Privacy, More Possibilities",
-//         description:
-//           "The traditional apartment lifestyle works exceptionally well for many urban residents. However, as families become more space-conscious, the appeal of independent or semi-independent homes is growing.",
-//         image:
-//           "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
-//         moreContent:
-//           "Unlike shared high-rises where ceilings and walls adjoin neighbors, villa living provides complete auditory peace, private manicured lawns for children and pets, and the flexibility to expand private terraces or garden pavilions."
-//       },
-//       {
-//         id: 5,
-//         number: 5,
-//         title: "Green Surroundings Add to the Appeal",
-//         description:
-//           "One of the biggest lifestyle advantages associated with parts of South Bangalore is the availability of relatively greener and more open surroundings compared with denser central locations.",
-//         image:
-//           "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
-//         moreContent:
-//           "Flanked by the Turahalli reserve forest and sprawling botanical green belts, the microclimate of South Bangalore consistently records 2-3°C cooler temperatures and cleaner air, elevating overall physical and respiratory wellness."
-//       }
-//     ],
-//     readMoreButton: {
-//       defaultText: "Read More",
-//       expandedText: "Show Less Insights"
-//     },
-//     relatedBlogs: [
-//       {
-//         id: "rb-1",
-//         title: "The Rise of Gated Villa Communities in Bangalore",
-//         date: "September 15, 2026",
-//         image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
-//       },
-//       {
-//         id: "rb-2",
-//         title: "Luxury Villas vs Apartments — What's Right for You?",
-//         date: "August 28, 2026",
-//         image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=400&q=80"
-//       },
-//       {
-//         id: "rb-3",
-//         title: "The Future of Luxury Living in South Bangalore",
-//         date: "August 20, 2026",
-//         image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80"
-//       },
-//       {
-//         id: "rb-4",
-//         title: "Why Green Living Matters in Modern Homes",
-//         date: "September 05, 2026",
-//         image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80"
-//       }
-//     ],
-//     tags: ["Bangalore Real Estate", "Luxury Villas", "Investment Corridor"]
-//   },
-//   // {
-//   //   id: 2,
-//   //   category: "LIFESTYLE",
-//   //   categorySlug: "lifestyle",
-//   //   title: "The Rise of Gated Villa Communities in Bangalore",
-//   //   excerpt:
-//   //     "Security, privacy and premium amenities are redefining modern living. Explore why gated villa communities are becoming the preferred choice for families in Bangalore.",
-//   //   date: "September 15, 2026",
-//   //   readTime: "4 min read",
-//   //   author: "Vikram Singhania",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
-//   //   heroImage:
-//   //     "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=85",
-//   //   breadcrumb: [
-//   //     { label: "Home", href: "#" },
-//   //     { label: "Blogs", href: "#" },
-//   //     { label: "The Rise of Gated Villa Communities in Bangalore", href: "#", current: true }
-//   //   ],
-//   //   introParagraphs: [
-//   //     {
-//   //       id: "p1",
-//   //       text: "Modern urban living demands a harmonious balance between bustling professional life and peaceful familial repose. Gated villa communities are no longer just an upscale lifestyle statement; they represent a fundamental reimagining of how families inhabit space."
-//   //     },
-//   //     {
-//   //       id: "p2",
-//   //       text: "Gone are the days when buying a standalone plot meant navigating unverified utilities, lone boundary walls, and unreliable neighborhood upkeep. In a modern master-planned MRCL enclave, homeowners inherit an entire ecosystem with",
-//   //       highlight: "exclusive gated security and world-class amenities",
-//   //       postHighlight: "that protect generational investment value."
-//   //     },
-//   //     {
-//   //       id: "p3",
-//   //       text: "Here is why Bangalore's leading families are embracing gated enclave architecture:",
-//   //       isBold: true
-//   //     }
-//   //   ],
-//   //   numberedPoints: [
-//   //     {
-//   //       id: 1,
-//   //       number: 1,
-//   //       title: "Multi-Tier Automated Security Systems",
-//   //       description:
-//   //         "Round-the-clock perimeter surveillance, biometric gates, and intelligent visitor authentication create absolute peace of mind for parents and seniors alike.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "With infrared motion detectors along boundary buffers and smart mobile apps for guest clearance, modern gated enclaves eliminate all security friction."
-//   //     },
-//   //     {
-//   //       id: 2,
-//   //       number: 2,
-//   //       title: "Private Clubhouses & Holistic Wellness Havens",
-//   //       description:
-//   //         "Olympic-length temperature-regulated pools, padel tennis courts, meditation pavilions, and state-of-the-art gymnasiums right at your doorstep.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Enjoy curated weekends without stepping outside your community gates, from private dining lounges to spa facilities."
-//   //     },
-//   //     {
-//   //       id: 3,
-//   //       number: 3,
-//   //       title: "Vehicle-Free Pedestrian Zones for Children",
-//   //       description:
-//   //         "Underground parking channels and landscaped pedestrian promenades ensure children can ride bicycles and play freely without vehicular hazards.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "The layout prioritizes human-scale movement, fostering organic social gatherings among neighbors across generations."
-//   //     }
-//   //   ],
-//   //   readMoreButton: {
-//   //     defaultText: "Read More",
-//   //     expandedText: "Show Less Insights"
-//   //   },
-//   //   relatedBlogs: [
-//   //     {
-//   //       id: "rb-1",
-//   //       title: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-//   //       date: "September 21, 2026",
-//   //       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-2",
-//   //       title: "Luxury Villas vs Apartments — What's Right for You?",
-//   //       date: "August 28, 2026",
-//   //       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-3",
-//   //       title: "Bannerghatta Road: A Residential Corridor to Watch",
-//   //       date: "September 10, 2026",
-//   //       image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-4",
-//   //       title: "The Future of Luxury Living in South Bangalore",
-//   //       date: "August 20, 2026",
-//   //       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
-//   //     }
-//   //   ],
-//   //   tags: ["Gated Enclaves", "Community Living", "Modern Family"]
-//   // },
-//   // {
-//   //   id: 3,
-//   //   category: "LOCATION",
-//   //   categorySlug: "location",
-//   //   title: "Bannerghatta Road: A Residential Corridor to Watch",
-//   //   excerpt:
-//   //     "With excellent connectivity, strong social infrastructure and growing development, Bannerghatta Road is fast becoming a prime residential destination in South Bangalore.",
-//   //   date: "September 10, 2026",
-//   //   readTime: "6 min read",
-//   //   author: "Ananya Roy",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=80",
-//   //   heroImage:
-//   //     "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1600&q=85",
-//   //   breadcrumb: [
-//   //     { label: "Home", href: "#" },
-//   //     { label: "Blogs", href: "#" },
-//   //     { label: "Bannerghatta Road: A Residential Corridor to Watch", href: "#", current: true }
-//   //   ],
-//   //   introParagraphs: [
-//   //     {
-//   //       id: "p1",
-//   //       text: "Bannerghatta Road represents one of the most resilient and dynamic growth corridors in Bangalore. What was once considered a quiet city boundary has developed into a bustling, self-contained residential artery with exceptional civic readiness."
-//   //     },
-//   //     {
-//   //       id: "p2",
-//   //       text: "Top hospitals like Fortis and Apollo, prestigious educational institutions including IIM Bangalore, and world-class retail malls make this micro-market remarkably self-sufficient. For real estate investors,",
-//   //       highlight: "Bannerghatta Road property values",
-//   //       postHighlight: "continue to deliver superior capital compounding."
-//   //     },
-//   //     {
-//   //       id: "p3",
-//   //       text: "Key growth pillars powering this southern thoroughfare:",
-//   //       isBold: true
-//   //     }
-//   //   ],
-//   //   numberedPoints: [
-//   //     {
-//   //       id: 1,
-//   //       number: 1,
-//   //       title: "Comprehensive Social Infrastructure",
-//   //       description:
-//   //         "From international baccalaureate schools to quaternary healthcare centers, all essential services are established within a 5-minute radius.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "The density of accredited healthcare and learning campuses establishes this region as a perpetual favorite for high-income households."
-//   //     },
-//   //     {
-//   //       id: 2,
-//   //       number: 2,
-//   //       title: "Express Arterial Links via NICE Corridor",
-//   //       description:
-//   //         "Direct access to NICE Road unlocks signal-free transit to Electronic City, Kanakapura Road, Mysore Expressway, and Tumkur Road.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Tech leaders working in Electronic City enjoy effortless 20-minute daily commutes while residing in peaceful botanical surroundings."
-//   //     },
-//   //     {
-//   //       id: 3,
-//   //       number: 3,
-//   //       title: "Elevated Metro Connectivity",
-//   //       description:
-//   //         "Upcoming Namma Metro stations along the corridor will provide rapid mass-transit links into the Central Business District.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Transit-oriented development traditionally sparks an immediate 15-25% jump in prime real estate valuation."
-//   //     }
-//   //   ],
-//   //   readMoreButton: {
-//   //     defaultText: "Read More",
-//   //     expandedText: "Show Less Insights"
-//   //   },
-//   //   relatedBlogs: [
-//   //     {
-//   //       id: "rb-1",
-//   //       title: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-//   //       date: "September 21, 2026",
-//   //       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-2",
-//   //       title: "The Rise of Gated Villa Communities in Bangalore",
-//   //       date: "September 15, 2026",
-//   //       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-3",
-//   //       title: "Why Green Living Matters in Modern Homes",
-//   //       date: "September 05, 2026",
-//   //       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-4",
-//   //       title: "Luxury Villas vs Apartments — What's Right for You?",
-//   //       date: "August 28, 2026",
-//   //       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80"
-//   //     }
-//   //   ],
-//   //   tags: ["Bannerghatta Road", "Location Spotlight", "Civic Growth"]
-//   // },
-//   // {
-//   //   id: 4,
-//   //   category: "LIFESTYLE",
-//   //   categorySlug: "lifestyle",
-//   //   title: "Why Green Surroundings Matter in Modern Homes",
-//   //   excerpt:
-//   //     "More than just beauty, greenery brings peace, better health and a higher quality of life. Here's why nature is becoming a top priority for homebuyers.",
-//   //   date: "September 05, 2026",
-//   //   readTime: "4 min read",
-//   //   author: "Dr. Radhika Menon",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
-//   //   heroImage:
-//   //     "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=85",
-//   //   breadcrumb: [
-//   //     { label: "Home", href: "#" },
-//   //     { label: "Blogs", href: "#" },
-//   //     { label: "Why Green Surroundings Matter in Modern Homes", href: "#", current: true }
-//   //   ],
-//   //   introParagraphs: [
-//   //     {
-//   //       id: "p1",
-//   //       text: "In an era defined by screen fatigue, long commutes, and dense urban sprawl, the psychological value of natural green scapes has risen to the top of homebuyer criteria."
-//   //     },
-//   //     {
-//   //       id: "p2",
-//   //       text: "Biophilic architecture—the deliberate integration of natural light, water elements, and verdant native foliage into living spaces—has been scientifically proven to lower cortisol levels and foster emotional well-being through",
-//   //       highlight: "nature-centric architectural design",
-//   //       postHighlight: "that turns each morning into a restorative ritual."
-//   //     },
-//   //     {
-//   //       id: "p3",
-//   //       text: "The tangible wellness advantages of botanical living environments:",
-//   //       isBold: true
-//   //     }
-//   //   ],
-//   //   numberedPoints: [
-//   //     {
-//   //       id: 1,
-//   //       number: 1,
-//   //       title: "Clean Microclimate & Cooler Ambient Air",
-//   //       description:
-//   //         "Dense tree canopies and open gardens naturally lower surrounding ambient temperatures by 2-3°C compared to concrete dense city centers.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Native species like Neem and Gulmohar actively filter urban particulate matter, ensuring respiratory health for your loved ones."
-//   //     },
-//   //     {
-//   //       id: 2,
-//   //       number: 2,
-//   //       title: "Acoustic Insulation from City Clatter",
-//   //       description:
-//   //         "Strategic foliage buffers absorb sound waves, creating a quiet sanctuary where birdsong replaces traffic horns.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Deep sleep quality and cognitive focus flourish in naturally insulated green environments."
-//   //     }
-//   //   ],
-//   //   readMoreButton: {
-//   //     defaultText: "Read More",
-//   //     expandedText: "Show Less Insights"
-//   //   },
-//   //   relatedBlogs: [
-//   //     {
-//   //       id: "rb-1",
-//   //       title: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-//   //       date: "September 21, 2026",
-//   //       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-2",
-//   //       title: "Luxury Villas vs Apartments — What's Right for You?",
-//   //       date: "August 28, 2026",
-//   //       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80"
-//   //     }
-//   //   ],
-//   //   tags: ["Biophilic Living", "Wellness", "Eco Luxury"]
-//   // },
-//   // {
-//   //   id: 5,
-//   //   category: "REAL ESTATE",
-//   //   categorySlug: "real-estate",
-//   //   title: "Luxury Villas vs Apartments — What's Right for You?",
-//   //   excerpt:
-//   //     "From space and privacy to lifestyle and amenities, find out how luxury villas stack up against apartments and which one suits your needs.",
-//   //   date: "August 28, 2026",
-//   //   readTime: "7 min read",
-//   //   author: "MRCL Research Desk",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-//   //   heroImage:
-//   //     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
-//   //   breadcrumb: [
-//   //     { label: "Home", href: "#" },
-//   //     { label: "Blogs", href: "#" },
-//   //     { label: "Luxury Villas vs Apartments — What's Right for You?", href: "#", current: true }
-//   //   ],
-//   //   introParagraphs: [
-//   //     {
-//   //       id: "p1",
-//   //       text: "Choosing between a high-end luxury apartment and a bespoke independent villa is a pivotal lifestyle and financial decision. Both provide premium finishes and amenities, but the living experience diverges substantially."
-//   //     },
-//   //     {
-//   //       id: "p2",
-//   //       text: "While apartments offer shared vertical facilities, discerning buyers are placing a premium on absolute land title ownership and acoustic freedom with",
-//   //       highlight: "independent luxury villa developments",
-//   //       postHighlight: "that deliver unparalleled multi-generational prestige."
-//   //     },
-//   //     {
-//   //       id: "p3",
-//   //       text: "The key decision factors every prospective homeowner must weigh:",
-//   //       isBold: true
-//   //     }
-//   //   ],
-//   //   numberedPoints: [
-//   //     {
-//   //       id: 1,
-//   //       number: 1,
-//   //       title: "Land Ownership & Capital Appreciation",
-//   //       description:
-//   //         "Villa owners hold 100% undivided title to the underlying land plot, historically yielding 25-35% higher capital compounding compared to apartment UDS.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Land in Bengaluru is an inherently scarce asset. As the city expands, plot value appreciates at an accelerated rate."
-//   //     },
-//   //     {
-//   //       id: 2,
-//   //       number: 2,
-//   //       title: "Architectural Autonomy & Customization",
-//   //       description:
-//   //         "Add private solar terraces, home screening suites, wine cellars, or bespoke plunge pools without requiring committee approvals.",
-//   //       image:
-//   //         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
-//   //       moreContent:
-//   //         "Your home evolves with your family's milestones, giving you complete freedom to remodel interiors and outdoor grounds."
-//   //     }
-//   //   ],
-//   //   readMoreButton: {
-//   //     defaultText: "Read More",
-//   //     expandedText: "Show Less Insights"
-//   //   },
-//   //   relatedBlogs: [
-//   //     {
-//   //       id: "rb-1",
-//   //       title: "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
-//   //       date: "September 21, 2026",
-//   //       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80"
-//   //     },
-//   //     {
-//   //       id: "rb-2",
-//   //       title: "The Rise of Gated Villa Communities in Bangalore",
-//   //       date: "September 15, 2026",
-//   //       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
-//   //     }
-//   //   ],
-//   //   tags: ["Villas vs Flats", "Homebuying Guide", "Asset Class"]
-//   // },
-//   // {
-//   //   id: 6,
-//   //   category: "COMMUNITY",
-//   //   categorySlug: "community",
-//   //   title: "The Future of Luxury Living in South Bangalore",
-//   //   excerpt:
-//   //     "With better infrastructure, expanding neighbourhoods and lifestyle-focused communities, South Bangalore is shaping the future of premium living.",
-//   //   date: "August 20, 2026",
-//   //   readTime: "5 min read",
-//   //   author: "Karthik Nambiar",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Future Living", "Sustainable Architecture", "Bengaluru"]
-//   // },
-//   // {
-//   //   id: 7,
-//   //   category: "TIPS & GUIDES",
-//   //   categorySlug: "tips-guides",
-//   //   title: "Smart Home Automation: The New Benchmark for Luxury Villas",
-//   //   excerpt:
-//   //     "From automated climate zoning to voice-activated lighting circuits, discover how integrated smart ecosystems enhance convenience and energy savings.",
-//   //   date: "August 12, 2026",
-//   //   readTime: "5 min read",
-//   //   author: "Siddharth Rao",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Smart Homes", "Automation", "Tech Luxury"]
-//   // },
-//   // {
-//   //   id: 8,
-//   //   category: "INVESTMENT",
-//   //   categorySlug: "investment",
-//   //   title: "Real Estate Investment 2026: Why Plotted Developments Are Booming",
-//   //   excerpt:
-//   //     "Explore the financial dynamics driving plotted land appreciation and why institutional and retail investors are allocating capital into South Bangalore.",
-//   //   date: "August 04, 2026",
-//   //   readTime: "6 min read",
-//   //   author: "Pradeep Mehta",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Plotted Land", "Wealth Strategy", "Investment"]
-//   // },
-//   // {
-//   //   id: 9,
-//   //   category: "LIFESTYLE",
-//   //   categorySlug: "lifestyle",
-//   //   title: "Designing Your Private Sanctuary: Modern Interior Aesthetics",
-//   //   excerpt:
-//   //     "Curating warm minimalist interiors, Italian marble flooring, and expansive floor-to-ceiling glass fenestrations that welcome golden sunlight.",
-//   //   date: "July 28, 2026",
-//   //   readTime: "4 min read",
-//   //   author: "Lavanya Chawla",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Interior Design", "Luxury Decor", "Aesthetics"]
-//   // },
-//   // {
-//   //   id: 10,
-//   //   category: "TIPS & GUIDES",
-//   //   categorySlug: "tips-guides",
-//   //   title: "The Importance of Clear Land Titles & Legal Due Diligence",
-//   //   excerpt:
-//   //     "Essential verification checklists every prospective villa and plot buyer must review before finalizing their real estate acquisition.",
-//   //   date: "July 19, 2026",
-//   //   readTime: "6 min read",
-//   //   author: "Adv. Rajesh Shenoy",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Legal Due Diligence", "RERA", "Property Law"]
-//   // },
-//   // {
-//   //   id: 11,
-//   //   category: "INVESTMENT",
-//   //   categorySlug: "investment",
-//   //   title: "Evaluating ROI on Premium Real Estate in Bengaluru",
-//   //   excerpt:
-//   //     "Understanding rental yields, capital growth multipliers, and infrastructure milestones that drive prime residential appreciation.",
-//   //   date: "July 11, 2026",
-//   //   readTime: "5 min read",
-//   //   author: "MRCL Research Desk",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Rental Yields", "ROI", "Market Analysis"]
-//   // },
-//   // {
-//   //   id: 12,
-//   //   category: "REAL ESTATE",
-//   //   categorySlug: "real-estate",
-//   //   title: "Sustainable Luxury: Solar & Water Conservation in Gated Estates",
-//   //   excerpt:
-//   //     "How eco-conscious construction practices and self-sustaining water harvesting create resilient communities built for the next century.",
-//   //   date: "July 02, 2026",
-//   //   readTime: "5 min read",
-//   //   author: "Arjun Natarajan",
-//   //   image:
-//   //     "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-//   //   tags: ["Sustainability", "Water Security", "Green Architecture"]
-//   // }
-// ];
+{
+  id: 3,
+  slug: "why-families-are-choosing-villas-over-apartments-in-south-bangalore",
+  category: "REAL ESTATE",
+  categorySlug: "real-estate",
+  title:
+    "Why Families Are Choosing Villas Over Apartments in South Bangalore",
+  excerpt:
+    "Families are increasingly exploring villas for their spacious layouts, privacy, outdoor areas, community amenities, and long-term lifestyle benefits. Discover why villa living is attracting homebuyers across South Bangalore.",
+  date: "September 25, 2026",
+  readTime: "12 min read",
+  author: "MRCL Editorial Team",
+
+  
+    image:BlogImg3,
+
+  heroImage:
+    BlogImg3,
+
+  breadcrumb: [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    {
+      label:
+        "Why Families Are Choosing Villas Over Apartments in South Bangalore",
+      href:
+        "/blogs/why-families-are-choosing-villas-over-apartments-in-south-bangalore",
+      current: true,
+    },
+  ],
+
+  introParagraphs: [
+    {
+      id: "p1",
+      text:
+        "For many families, buying a home is no longer simply about finding the right number of bedrooms. It is about finding a place that supports the way they want to live—more privacy, more space, better surroundings, room for children to play, and an environment where everyday life feels comfortable.",
+    },
+
+    {
+      id: "p2",
+      text:
+        "That is one reason villas are attracting increasing attention among homebuyers exploring South Bangalore. From spacious layouts to private outdoor areas and community amenities, villas offer a different lifestyle from conventional apartment living. For families searching for a long-term home, ",
+      highlight: "Villas for sale in South Bangalore",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+      postHighlight:
+        " are becoming an option worth exploring.",
+    },
+
+    {
+      id: "p3",
+      text:
+        "Let's explore the key reasons families are considering villas over apartments and what makes this residential lifestyle appealing.",
+      isBold: true,
+    },
+  ],
+
+  numberedPoints: [
+    {
+      id: 1,
+      number: 1,
+      title: "More Space for the Entire Family",
+
+      description:
+        "Space is one of the biggest reasons families consider a villa. While apartments can offer efficient floor plans, villas may provide multiple floors, larger living areas, bedrooms with greater privacy, balconies, terraces, gardens, or private outdoor spaces.",
+
+      image:
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "This additional room can make a noticeable difference for families with children, elderly parents, or people working from home. Parents can have dedicated workspaces, children can have their own rooms, and grandparents can enjoy quieter areas of the house. Instead of adapting every activity to limited apartment space, families can choose a home designed around their lifestyle. For buyers exploring Villas for sale in Bannerghatta Road, the combination of residential space and connectivity can make villa living particularly appealing.",
+
+      highlight: "Villas for sale in Bannerghatta Road",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 2,
+      number: 2,
+      title: "Privacy Without Giving Up Community Living",
+
+      description:
+        "One of the most attractive features of villa living is the balance between privacy and community. Families can enjoy greater separation between homes while still having access to shared facilities and neighbourhood activities.",
+
+      image:
+        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Apartments naturally involve shared walls, common corridors, lifts, and shared spaces. Villas can offer greater separation between homes, which may create a more private residential experience. At the same time, Gated community villas for sale in South Bangalore can provide shared amenities such as landscaped gardens, clubhouses, swimming pools, children's play areas, walking tracks, sports facilities, and security systems. This creates an interesting middle ground: families can enjoy their own private home while still having opportunities to meet neighbours and participate in community activities.",
+
+      highlight: "Gated community villas for sale in South Bangalore",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 3,
+      number: 3,
+      title: "A Better Environment for Children",
+
+      description:
+        "For families with young children, the surroundings of a home matter almost as much as the home itself. A thoughtfully planned villa community may offer open spaces where children can play, cycle, or spend time outdoors.",
+
+      image:
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Landscaped areas and pedestrian-friendly internal roads can create a more relaxed environment compared with dense urban surroundings. Children may have more opportunities to interact with other children in the community, while parents can enjoy the convenience of having recreational spaces close to home. This family-oriented atmosphere is one reason buyers researching Luxury villas for sale in South Bangalore often look beyond interiors and evaluate the complete community experience.",
+
+      highlight: "Luxury villas for sale in South Bangalore",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 4,
+      number: 4,
+      title: "Outdoor Space Becomes Part of Everyday Life",
+
+      description:
+        "Imagine having your morning coffee in a private garden, hosting a weekend barbecue, or creating a small play area for children. Outdoor space can become an important part of a family's daily routine.",
+
+      image:
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "These possibilities can be more difficult to achieve in a conventional apartment, especially when private outdoor space is limited. Depending on the design, villas can provide balconies, terraces, gardens, courtyards, or other outdoor areas. For families who enjoy gardening, entertaining guests, spending time outdoors, or simply having a quiet corner at home, this extra space can add lifestyle value. Buyers should review the actual layout and outdoor facilities offered by each project before making a decision.",
+
+    },
+
+    {
+      id: 5,
+      number: 5,
+      title: "Flexible Spaces for Changing Family Needs",
+
+      description:
+        "A family's needs rarely remain the same for decades. A couple may initially need a home office, while a growing family may later require a nursery, children's room, study area, or additional space for elderly parents.",
+
+      image:
+        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Villa layouts can provide greater flexibility for changing requirements. Additional bedrooms, family rooms, study areas, utility spaces, and terraces may be used differently as family circumstances evolve. This makes a villa particularly interesting for buyers planning to stay in their home for the long term rather than treating it as a temporary residence. However, the actual flexibility depends on the property's design, structural restrictions, and applicable community rules.",
+
+    },
+
+    {
+      id: 6,
+      number: 6,
+      title: "South Bangalore Offers a Strong Residential Setting",
+
+      description:
+        "South Bangalore has developed into a diverse residential market, with established neighbourhoods as well as emerging residential pockets. Areas around Bannerghatta Road have attracted attention from buyers looking for residential convenience and access to urban facilities.",
+
+      image:
+        "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "For families, the surrounding infrastructure influences daily routines, school commutes, access to healthcare, shopping convenience, and social life. Areas around Bannerghatta Road and other parts of South Bangalore provide access to different residential and commercial zones. Consequently, people exploring Villas for sale in South Bangalore are increasingly evaluating location alongside design, amenities, connectivity, and community infrastructure. Buyers should independently verify travel times and nearby facilities for the specific property they are considering.",
+
+      highlight: "Villas for sale in South Bangalore",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 7,
+      number: 7,
+      title: "Villas Can Offer a More Premium Lifestyle",
+
+      description:
+        "A villa can combine the feeling of a private residence with the amenities associated with a modern residential development. This combination can appeal to families seeking a more spacious and lifestyle-focused home.",
+
+      image:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Contemporary villa projects may feature landscaped entrances, clubhouses, fitness centres, pools, recreational zones, security features, and carefully planned open spaces. For buyers looking for an elevated residential experience, Luxury villas for sale in South Bangalore can offer spacious architecture and premium amenities while maintaining the comfort of a family-oriented community. The appeal is not simply about having a larger house. It is about creating an environment where work, relaxation, entertainment, and family time can coexist comfortably. Amenities and specifications vary by project and should be verified before purchase.",
+
+      highlight: "Luxury villas for sale in South Bangalore",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 8,
+      number: 8,
+      title: "More Freedom to Personalise Your Home",
+
+      description:
+        "Another feature that attracts some buyers to villa living is the potential for personalisation. Depending on the project and applicable community rules, homeowners may have opportunities to design interiors around their preferences.",
+
+      image:
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Furniture layouts, home offices, children's rooms, entertainment areas, gardens, and décor can be planned to suit individual needs. For families, this can make the house feel more like a long-term personal space rather than simply another unit within a larger building. However, homeowners should check the project's rules, structural limitations, maintenance guidelines, and approval requirements before making significant modifications.",
+
+    },
+
+    {
+      id: 9,
+      number: 9,
+      title: "An Alternative to the Conventional Apartment Lifestyle",
+
+      description:
+        "Apartments remain a practical choice for many homebuyers, particularly those who prioritise convenience, compact maintenance, and access to shared amenities. Villas offer a different residential format that may suit families with other priorities.",
+
+      image:
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "Families who place a higher priority on privacy, space, independent access, outdoor areas, and a house-like environment may find villas worth exploring. This is particularly relevant for buyers searching for an Independent house for sale in Bannerghatta who want the experience of an individual residence while remaining connected to the broader South Bangalore ecosystem. The choice between an apartment and a villa depends on budget, maintenance requirements, location, family preferences, and the features of the specific property.",
+
+      highlight: "Independent house for sale in Bannerghatta",
+      highlightLink:
+        "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+    },
+
+    {
+      id: 10,
+      number: 10,
+      title: "A Home Designed for Long-Term Living",
+
+      description:
+        "Ultimately, choosing between a villa and an apartment comes down to lifestyle priorities. For families, a home needs to accommodate today's requirements while offering enough flexibility for tomorrow.",
+
+      image:
+        "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=600&q=80",
+
+      moreContent:
+        "More space, private areas, outdoor zones, community amenities, and a family-friendly setting can make villas an attractive proposition for some buyers. As South Bangalore continues to evolve, homebuyers are exploring residential options that offer more than four walls and a convenient address. They are looking for homes where children can grow, families can spend quality time together, and everyday life can feel more spacious. Before making a purchase, families should compare total ownership costs, location, construction quality, community facilities, and long-term suitability.",
+
+    },
+  ],
+
+  finalThoughts: {
+    title: "Final Thoughts",
+
+    paragraphs: [
+      {
+        text:
+          "The growing interest in villas reflects a broader change in what families expect from their homes. Instead of simply asking, \"How many bedrooms do we get?\", buyers are asking, \"How do we want to live?\"",
+      },
+
+      {
+        text:
+          "For those seeking greater privacy, generous space, outdoor living, premium amenities, and a community environment, Villas for sale in Bannerghatta Road and across South Bangalore can offer an appealing alternative to traditional apartment living.",
+
+        highlight: "Villas for sale in Bannerghatta Road",
+        highlightLink:
+          "https://www.mrclinfrastructure.com/villa-for-sale-bannerghatta/",
+      },
+
+      {
+        text:
+          "Whether you are considering Villas for sale in South Bangalore, exploring Luxury villas for sale in South Bangalore, comparing Gated community villas for sale in South Bangalore, or looking for an Independent house for sale in Bannerghatta, the key is to evaluate the home not only by its size or price but by how well it fits your family's lifestyle today—and the life you envision for the years ahead.",
+
+        isBold: true,
+      },
+    ],
+  },
+
+  readMoreButton: {
+    defaultText: "Read More",
+    expandedText: "Show Less Insights",
+  },
+
+  relatedBlogs: [
+    {
+      id: "rb-1",
+      title:
+        "Why South Bangalore Is Becoming the New Hotspot for Luxury Villa Living",
+      date: "September 21, 2026",
+      image:
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=400&q=80",
+    },
+
+    {
+      id: "rb-2",
+      title:
+        "Why Villas in South Bangalore Are Attracting Homebuyers and Investors",
+      date: "September 22, 2026",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
+    },
+
+    {
+      id: "rb-3",
+      title: "The Rise of Gated Villa Communities in Bangalore",
+      date: "September 15, 2026",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
+    },
+
+    {
+      id: "rb-4",
+      title: "Luxury Villas vs Apartments — What's Right for You?",
+      date: "August 28, 2026",
+      image:
+        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=400&q=80",
+    },
+  ],
+
+  tags: [
+    "Bangalore Real Estate",
+    "South Bangalore",
+    "Luxury Villas",
+    "Bannerghatta Road",
+    "Villa Communities",
+    "Family Homes",
+    "Apartments vs Villas",
+  ],
+},
+];
 
 // Export featuredBlogDetail directly from blogPosts[0]
 export const featuredBlogDetail = blogPosts[0];
