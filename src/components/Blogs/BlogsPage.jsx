@@ -183,13 +183,24 @@ export default function BlogsPage() {
 
         <div className="relative max-w-6xl mx-auto text-center space-y-5">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dfb76c]/10 border border-[#dfb76c]/40 text-[#f5e2b8] text-xs font-semibold uppercase tracking-[0.25em]">
+          {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dfb76c]/10 border border-[#dfb76c]/40 text-[#f5e2b8] text-xs font-semibold uppercase tracking-[0.25em]">
             <Sparkles className="w-3.5 h-3.5 text-[#dfb76c]" />
             <span>{heroData.badge || 'MRCL INFRASTRUCTURE'}</span>
+          </div> */}
+          
+          <div className="flex flex-col items-center gap-0.5 mb-6 scale-95 sm:scale-100">
+            <svg className="w-11 h-11 text-[#c5a85c] filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,80 V45 L35,35 V80" stroke="#c5a85c" strokeWidth="2" strokeLinejoin="round" />
+              <path d="M35,80 V25 L55,15 L75,25 V80" stroke="#c5a85c" strokeWidth="2.5" strokeLinejoin="round" fill="rgba(197,168,92,0.18)" />
+              <path d="M75,80 V50 L85,45 V80" stroke="#c5a85c" strokeWidth="2" strokeLinejoin="round" />
+              <line x1="10" y1="80" x2="90" y2="80" stroke="#c5a85c" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+            <span className="font-serif text-white text-xs font-black tracking-[0.28em] leading-none uppercase mt-1">MRCL</span>
+            <span className="font-sans text-[6.5px] tracking-[0.32em] text-[#c5a85c] font-black uppercase">INFRASTRUCTURE</span>
           </div>
 
           {/* Main Title */}
-          <h1 className="font-garamond text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#fbf9f5]">
+           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#faf7f0] via-[#e2c58a] to-[#b5802f] tracking-[0.1em] uppercase leading-tight filter drop-shadow">
             {heroData.title || 'BLOGS'}
           </h1>
 
